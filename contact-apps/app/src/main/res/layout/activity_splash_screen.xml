@@ -24,4 +24,5 @@
         android:layout_marginStart="135dp"
         android:textColor="@color/white"
         android:textSize="14sp" />
+
 </LinearLayout>

@@ -5,4 +5,11 @@
     <string name="contact_apps">Contact Apps</string>
     <string name="get_started">Get Started</string>
     <string name="no_telepon">no telepon</string>
+    <string name="username">username</string>
+    <string name="alamat">alamat</string>
+    <string name="nomer_telepone">nomer telepone</string>
+    <string name="email">email</string>
+    <string name="tanggal_lahir">tanggal lahir</string>
+    <string name="jenis_kelamin">Jenis Kelamin</string>
+    <string name="tambah">Tambah</string>
 </resources>

@@ -1,17 +1,16 @@
 const multer = require('multer');
-const path = require('path');
 
 const storege = multer.diskStorage({
   destination: function(req, file, cb) {
-    cb(null, path.join(__dirname, '../public/uploads/'));
+    cb(null, 'public/uploads/');
   },
   filename: function(req, file,cb){
-    cb(null, new Date().toISOString() .replace (/:/g, '-') + file.originalname);
+    cb(null, new Date().toISOString() + '_' + file.originalname);
   },
 });
 
 const fileFilter = (req, file, cb) => {
-  if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png'){
+  if(file.mimetype == 'image/jpeg' || file.mimetype === 'image/png'){
     cb(null, true);
   }else{
     cb(
@@ -31,4 +30,4 @@ const uploadMiddleware = multer({
   fileFilter: fileFilter,
 });
 
-module.exports = { uploadMiddleware };
+module.exports = { uploadMiddleware }
