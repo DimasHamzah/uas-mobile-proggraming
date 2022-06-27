@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/blue"
     android:orientation="vertical"
-    tools:context=".ui.SplashScreenActivity">
+    tools:context=".ui.splash.SplashScreenActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -24,16 +24,4 @@
         android:layout_marginStart="135dp"
         android:textColor="@color/white"
         android:textSize="14sp" />
-
-    <Button
-        android:id="@+id/buttonLogin"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:text="@string/get_started"
-        android:layout_marginTop="250dp"
-        android:layout_marginStart="30dp"
-        android:textColor="@color/blue"
-        android:textSize="18sp"
-        app:backgroundTint="@color/white" />
 </LinearLayout>

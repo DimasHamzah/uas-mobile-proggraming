@@ -1,11 +1,13 @@
-package com.example.myapplication.ui;
+package com.example.myapplication.ui.splash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.myapplication.R;
+import com.example.myapplication.ui.main.MainActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -14,15 +16,14 @@ public class SplashScreenActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_splash_screen);
     getSupportActionBar().hide();
-  }
 
-  private static void setSplashDetik() {
     final Handler handler = new Handler();
     handler.postDelayed(new Runnable() {
       @Override
       public void run() {
-
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        finish();
       }
-    }, 1500L);
+    }, 1000L);
   }
 }
