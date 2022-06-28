@@ -13,7 +13,7 @@ public class ApiConfig {
       .addInterceptor(loggingInterceptor)
       .build();
     Retrofit retrofit = new retrofit2.Retrofit.Builder()
-      .baseUrl("192.168.1.69:3000/api/v1/")
+      .baseUrl("http://192.168.1.69:3000/api/v1/")
       .addConverterFactory(GsonConverterFactory.create())
       .client(client)
       .build();

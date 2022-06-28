@@ -14,11 +14,12 @@ import com.example.myapplication.R;
 import com.example.myapplication.network.response.DataItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListContactAdapter extends RecyclerView.Adapter<ListContactAdapter.ListViewHolder> {
-  private ArrayList<DataItem> listContact;
+  private List<DataItem> listContact;
 
-  public ListContactAdapter(ArrayList<DataItem> list) {
+  public ListContactAdapter(List<DataItem> list) {
     this.listContact = list;
   }
 
@@ -34,8 +35,9 @@ public class ListContactAdapter extends RecyclerView.Adapter<ListContactAdapter.
     DataItem dataItem = listContact.get(position);
     holder.tvContact.setText(dataItem.getNotelphone());
     holder.tvUsername.setText(dataItem.getUsername());
+    holder.tvEmail.setText(dataItem.getEmail());
     Glide.with(holder.itemView.getContext())
-      .load("192.168.1.69:3000/api/v1/"+dataItem.getImage())
+      .load("http://192.168.1.69:3000/"+dataItem.getImage())
       .circleCrop()
       .into(holder.imagePhoto);
   }
@@ -47,12 +49,13 @@ public class ListContactAdapter extends RecyclerView.Adapter<ListContactAdapter.
 
   public class ListViewHolder extends RecyclerView.ViewHolder {
     ImageView imagePhoto;
-    TextView tvUsername, tvContact;
+    TextView tvUsername, tvContact, tvEmail;
     public ListViewHolder(@NonNull View itemView) {
       super(itemView);
       imagePhoto = itemView.findViewById(R.id.img_avatar);
       tvUsername = itemView.findViewById(R.id.tv_item_username);
       tvContact = itemView.findViewById(R.id.tv_item_contact);
+      tvEmail = itemView.findViewById(R.id.tv_item_email);
     }
   }
 }

@@ -60,7 +60,11 @@ module.exports = {
   
   getAllContact: async (req, res, next) => {
     try {
-      const contactUser = await Contact.findAll();
+      const contactUser = await Contact.findAll({
+        order: [
+          ['id', 'DESC']
+        ]
+      });
       if (contactUser === [] || contactUser === null) {
         return res.status(422).json({
           error: true,
