@@ -31,7 +31,7 @@
             tools:src="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/tv_item_anak"
+            android:id="@+id/tv_item_contact"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -46,7 +46,7 @@
             tools:text="nama" />
 
         <TextView
-            android:id="@+id/tv_item_kelas"
+            android:id="@+id/tv_item_username"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -57,7 +57,7 @@
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toEndOf="@+id/img_avatar"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_item_anak"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_item_contact"
             tools:text="@string/no_telepon" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

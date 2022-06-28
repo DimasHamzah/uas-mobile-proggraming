@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
@@ -14,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.myapplication.R;
+import com.example.myapplication.viewmodel.ContactViewModel;
+import com.example.myapplication.viewmodel.ViewModelFactory;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ListContactFragment extends Fragment {
@@ -31,9 +34,15 @@ public class ListContactFragment extends Fragment {
     ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
     actionBar.hide();
 
+    ViewModelFactory factory = ViewModelFactory.getInstance(getActivity());
+    ContactViewModel contactViewModel = new ViewModelProvider(this, (ViewModelProvider.Factory) factory).get(ContactViewModel.class);
+
+
     FloatingActionButton btnAddContact = (FloatingActionButton) view.findViewById(R.id.addContact);
     btnAddContact.setOnClickListener(
       Navigation.createNavigateOnClickListener(R.id.action_listContactFragment_to_addContactFragment)
     );
   }
+
+
 }
