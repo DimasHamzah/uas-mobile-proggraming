@@ -3,6 +3,7 @@ package com.example.myapplication.viewmodel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.myapplication.network.response.ResponseDetail;
 import com.example.myapplication.network.response.ResponseListContact;
 import com.example.myapplication.repository.ContactRepository;
 
@@ -23,5 +24,9 @@ public class ContactViewModel extends ViewModel {
 
   public LiveData<Boolean> getLoading() {
     return contactRepository.getLoading();
+  }
+
+  public LiveData<ResponseDetail> getDetailContact(Integer id) {
+    return contactRepository.requestGetDetail(id);
   }
 }
