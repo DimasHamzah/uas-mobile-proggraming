@@ -1,16 +1,14 @@
 package com.example.myapplication.helper;
 
-
-import android.icu.text.SimpleDateFormat;
-
-import java.util.Date;
-import java.util.Locale;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
 public class DateFormat {
-  public static String getCurrentDate() {
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.getDefault());
-    Date date = new Date();
-
-    return dateFormat.format(date);
+  public static String getCurrentDate(String currentDateString, String targetTimeZone) {
+    Instant instant = Instant.parse(currentDateString);
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy | HH:mm")
+      .withZone(ZoneId.of(targetTimeZone));
+    return formatter.format(instant);
   }
 }
