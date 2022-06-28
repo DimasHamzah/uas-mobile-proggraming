@@ -12,4 +12,6 @@
     <string name="tanggal_lahir">tanggal lahir</string>
     <string name="jenis_kelamin">Jenis Kelamin</string>
     <string name="tambah">Tambah</string>
+    <string name="detail_contact">Detail Contact</string>
+    <string name="kembali">Kembali</string>
 </resources>

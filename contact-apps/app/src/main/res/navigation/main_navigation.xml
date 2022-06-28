@@ -11,11 +11,11 @@
         android:label="fragment_list_contact"
         tools:layout="@layout/fragment_list_contact" >
         <action
+            android:id="@+id/action_listContactFragment_to_detailListFragment"
+            app:destination="@id/detailListFragment" />
+        <action
             android:id="@+id/action_listContactFragment_to_addContactFragment"
             app:destination="@id/addContactFragment" />
-        <action
-            android:id="@+id/action_listContactFragment_to_updateContactFragment"
-            app:destination="@id/updateContactFragment" />
     </fragment>
     <fragment
         android:id="@+id/addContactFragment"
@@ -27,4 +27,13 @@
         android:name="com.example.myapplication.ui.main.UpdateContactFragment"
         android:label="fragment_update_contact"
         tools:layout="@layout/fragment_update_contact" />
+    <fragment
+        android:id="@+id/detailListFragment"
+        android:name="com.example.myapplication.ui.main.DetailListFragment"
+        android:label="fragment_detail_list"
+        tools:layout="@layout/fragment_detail_list" >
+        <action
+            android:id="@+id/action_detailListFragment_to_updateContactFragment"
+            app:destination="@id/updateContactFragment" />
+    </fragment>
 </navigation>

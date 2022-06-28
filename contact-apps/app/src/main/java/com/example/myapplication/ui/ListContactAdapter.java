@@ -1,5 +1,6 @@
 package com.example.myapplication.ui;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -32,6 +34,7 @@ public class ListContactAdapter extends RecyclerView.Adapter<ListContactAdapter.
 
   @Override
   public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
+    Bundle bundle = new Bundle();
     DataItem dataItem = listContact.get(position);
     holder.tvContact.setText(dataItem.getNotelphone());
     holder.tvUsername.setText(dataItem.getUsername());
@@ -40,6 +43,10 @@ public class ListContactAdapter extends RecyclerView.Adapter<ListContactAdapter.
       .load("http://192.168.1.69:3000/"+dataItem.getImage())
       .circleCrop()
       .into(holder.imagePhoto);
+    bundle.putInt("id", dataItem.getId());
+    holder.itemView.setOnClickListener(
+      Navigation.createNavigateOnClickListener(R.id.action_listContactFragment_to_detailListFragment, bundle)
+    );
   }
 
   @Override

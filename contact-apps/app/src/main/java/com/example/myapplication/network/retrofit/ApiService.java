@@ -8,4 +8,5 @@ import retrofit2.http.GET;
 public interface ApiService {
   @GET("contact")
   Call<ResponseListContact> getListContact();
+
 }
