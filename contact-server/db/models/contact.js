@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Contact.init({
-    image: DataTypes.STRING,
     username: DataTypes.STRING,
     alamat: DataTypes.STRING,
     notelphone: DataTypes.STRING,

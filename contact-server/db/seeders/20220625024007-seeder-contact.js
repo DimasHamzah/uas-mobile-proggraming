@@ -3,7 +3,6 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
      await queryInterface.bulkInsert('Contacts', [{
-      image: '',
       username: 'testing',
       alamat:'testing',
       notelphone: 'testing',
