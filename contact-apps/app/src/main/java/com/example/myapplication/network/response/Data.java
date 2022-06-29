@@ -1,7 +1,6 @@
 package com.example.myapplication.network.response;
 
 public class Data{
-	private String image;
 	private String createdAt;
 	private String jenisKelasmin;
 	private int id;
@@ -11,10 +10,6 @@ public class Data{
 	private String username;
 	private String alamat;
 	private String updatedAt;
-
-	public String getImage(){
-		return image;
-	}
 
 	public String getCreatedAt(){
 		return createdAt;

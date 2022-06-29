@@ -8,6 +8,7 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -22,29 +23,27 @@ public interface ApiService {
   @GET("contact/{id}")
   Call<ResponseDetail> requestGetDetailContact(@Path("id") Integer id);
 
-  @Multipart
+  @FormUrlEncoded
   @POST("contact")
   Call<ResponseDetail> requestPostContact(
-    @Part("file") MultipartBody.Part file,
-    @Part("username")RequestBody username,
-    @Part("alamat") RequestBody alamat,
-    @Part("notelphone") RequestBody notelphone,
-    @Part("email") RequestBody email,
-    @Part("tanggalLahir") RequestBody tanggalLahir,
-    @Part("jenisKelasmin") RequestBody jenisKelamin
+    @Field("username") String username,
+    @Field("alamat") String alamat,
+    @Field("notelphone") String noTelphone,
+    @Field("email") String email,
+    @Field("tanggalLahir") String tanggalLahir,
+    @Field("jenisKelasmin") String jenisKelamin
     );
 
-  @Multipart
+  @FormUrlEncoded
   @PUT("contact/{id}")
   Call<ResponseDetail> requestUpdateContact(
     @Path("id") Integer id,
-    @Part("file") MultipartBody.Part file,
-    @Part("username")RequestBody username,
-    @Part("alamat") RequestBody alamat,
-    @Part("notelphone") RequestBody notelphone,
-    @Part("email") RequestBody email,
-    @Part("tanggalLahir") RequestBody tanggalLahir,
-    @Part("jenisKelasmin") RequestBody jenisKelamin
+    @Field("username") String username,
+    @Field("alamat") String alamat,
+    @Field("notelphone") String noTelphone,
+    @Field("email") String email,
+    @Field("tanggalLahir") String tanggalLahir,
+    @Field("jenisKelasmin") String jenisKelamin
   );
 
   @DELETE("contact/{id}")

@@ -2,65 +2,94 @@ package com.example.myapplication.ui.main;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.myapplication.R;
+import com.example.myapplication.databinding.FragmentUpdateContactBinding;
+import com.example.myapplication.network.response.ResponseDetail;
+import com.example.myapplication.viewmodel.ContactViewModel;
+import com.example.myapplication.viewmodel.ViewModelFactory;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link UpdateContactFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class UpdateContactFragment extends Fragment {
-
-  // TODO: Rename parameter arguments, choose names that match
-  // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-  private static final String ARG_PARAM1 = "param1";
-  private static final String ARG_PARAM2 = "param2";
-
-  // TODO: Rename and change types of parameters
-  private String mParam1;
-  private String mParam2;
-
-  public UpdateContactFragment() {
-    // Required empty public constructor
-  }
-
-  /**
-   * Use this factory method to create a new instance of
-   * this fragment using the provided parameters.
-   *
-   * @param param1 Parameter 1.
-   * @param param2 Parameter 2.
-   * @return A new instance of fragment UpdateContactFragment.
-   */
-  // TODO: Rename and change types and number of parameters
-  public static UpdateContactFragment newInstance(String param1, String param2) {
-    UpdateContactFragment fragment = new UpdateContactFragment();
-    Bundle args = new Bundle();
-    args.putString(ARG_PARAM1, param1);
-    args.putString(ARG_PARAM2, param2);
-    fragment.setArguments(args);
-    return fragment;
-  }
-
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    if (getArguments() != null) {
-      mParam1 = getArguments().getString(ARG_PARAM1);
-      mParam2 = getArguments().getString(ARG_PARAM2);
-    }
-  }
+  private FragmentUpdateContactBinding binding;
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
                            Bundle savedInstanceState) {
-    // Inflate the layout for this fragment
     return inflater.inflate(R.layout.fragment_update_contact, container, false);
+  }
+
+  @Override
+  public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    super.onViewCreated(view, savedInstanceState);
+    binding = FragmentUpdateContactBinding.bind(view);
+
+    int id = getArguments().getInt("id");
+
+    ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+    actionBar.hide();
+
+    ViewModelFactory viewModelFactory = ViewModelFactory.getInstance(requireActivity());
+    ContactViewModel contactViewModel = new ViewModelProvider(this, (ViewModelProvider.Factory) viewModelFactory).get(ContactViewModel.class);
+
+    contactViewModel.getDetailContact(id).observe(getViewLifecycleOwner(), this::setField);
+
+    binding.buttonBackHome.setOnClickListener(
+      Navigation.createNavigateOnClickListener(R.id.action_updateContactFragment_to_listContactFragment)
+    );
+
+    binding.buttonUpdate.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        updateContact(id);
+      }
+    });
+  }
+
+  private void setField(ResponseDetail responseDetail) {
+    binding.usernameEditText.setText(responseDetail.getData().getUsername());
+    binding.alamatEditText.setText(responseDetail.getData().getAlamat());
+    binding.teleponeEditText.setText(responseDetail.getData().getNotelphone());
+    binding.emailEditText.setText(responseDetail.getData().getEmail());
+    binding.genderEditText.setText(responseDetail.getData().getJenisKelasmin());
+    binding.tanggalLahirEditText.setText(responseDetail.getData().getTanggalLahir());
+  }
+
+  private void updateContact(int id) {
+    ViewModelFactory viewModelFactory = ViewModelFactory.getInstance(requireActivity());
+    ContactViewModel contactViewModel = new ViewModelProvider(this, (ViewModelProvider.Factory) viewModelFactory).get(ContactViewModel.class);
+
+    contactViewModel.updateContact(
+      id,
+      binding.usernameEditText.getText().toString().trim(),
+      binding.alamatEditText.getText().toString().trim(),
+      binding.teleponeEditText.getText().toString().trim(),
+      binding.emailEditText.getText().toString().trim(),
+      binding.tanggalLahirEditText.getText().toString().trim(),
+      binding.genderEditText.getText().toString().trim()
+      ).observe(getViewLifecycleOwner(), response -> {
+      String message = response.getContentIfNotHandled();
+      if(message != null) {
+        Toast.makeText(requireActivity(), message, Toast.LENGTH_SHORT).show();
+      }
+    });
+
+    contactViewModel.getError().observe(getViewLifecycleOwner(), message -> {
+      String error = message.getContentIfNotHandled();
+      if(error != null) {
+        Toast.makeText(requireActivity(), error, Toast.LENGTH_SHORT).show();
+      }
+    });
   }
 }

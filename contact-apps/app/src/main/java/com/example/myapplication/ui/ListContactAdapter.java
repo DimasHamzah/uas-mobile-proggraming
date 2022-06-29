@@ -39,10 +39,17 @@ public class ListContactAdapter extends RecyclerView.Adapter<ListContactAdapter.
     holder.tvContact.setText(dataItem.getNotelphone());
     holder.tvUsername.setText(dataItem.getUsername());
     holder.tvEmail.setText(dataItem.getEmail());
-    Glide.with(holder.itemView.getContext())
-      .load("http://192.168.1.69:3000/"+dataItem.getImage())
-      .circleCrop()
-      .into(holder.imagePhoto);
+    if(dataItem.getJenisKelasmin().equalsIgnoreCase("pria")) {
+      Glide.with(holder.itemView.getContext())
+        .load(R.drawable.icon_man)
+        .circleCrop()
+        .into(holder.imagePhoto);
+    }else{
+      Glide.with(holder.itemView.getContext())
+        .load(R.drawable.icon_woman)
+        .circleCrop()
+        .into(holder.imagePhoto);
+    }
     bundle.putInt("id", dataItem.getId());
     holder.itemView.setOnClickListener(
       Navigation.createNavigateOnClickListener(R.id.action_listContactFragment_to_detailListFragment, bundle)

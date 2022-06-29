@@ -4,9 +4,6 @@ import com.google.gson.annotations.SerializedName;
 
 public class DataItem{
 
-	@SerializedName("image")
-	private String image;
-
 	@SerializedName("createdAt")
 	private String createdAt;
 
@@ -33,10 +30,6 @@ public class DataItem{
 
 	@SerializedName("updatedAt")
 	private String updatedAt;
-
-	public String getImage(){
-		return image;
-	}
 
 	public String getCreatedAt(){
 		return createdAt;
