@@ -6,202 +6,205 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.main.AddContactFragment"
     android:layout_height="match_parent"
+    android:background="@color/blue"
     android:layout_width="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-
-
-        <ImageButton
-            android:id="@+id/image"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="100dp"
-            tools:src="@tools:sample/avatars" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/usernameContainer"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="270dp"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="15dp"
-            android:textColorHint="@color/black"
-            app:boxBackgroundColor="@color/white"
-            app:boxStrokeWidth="1dp"
-            app:endIconMode="clear_text"
-            app:helperTextTextColor="@color/black"
-            app:hintTextColor="@color/black"
-            app:startIconDrawable="@drawable/ic_email"
-            app:startIconTint="@color/blue">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/usernameEditText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="@string/username"
-                android:inputType="textEmailAddress"
-                android:lines="1" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/alamatContainer"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="270dp"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="5dp"
-            android:textColorHint="@color/black"
-            app:boxBackgroundColor="@color/white"
-            app:boxStrokeWidth="1dp"
-            app:endIconMode="clear_text"
-            app:helperTextTextColor="@color/black"
-            app:hintTextColor="@color/black"
-            app:startIconDrawable="@drawable/ic_baseline_location"
-            app:startIconTint="@color/blue">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/alamatEditText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="@string/alamat"
-                android:inputType="textEmailAddress"
-                android:lines="1" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/teleponeContainer"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="270dp"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="5dp"
-            android:textColorHint="@color/black"
-            app:boxBackgroundColor="@color/white"
-            app:boxStrokeWidth="1dp"
-            app:endIconMode="clear_text"
-            app:helperTextTextColor="@color/black"
-            app:hintTextColor="@color/black"
-            app:startIconDrawable="@drawable/ic_local_phone"
-            app:startIconTint="@color/blue">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/teleponeEditText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="@string/nomer_telepone"
-                android:inputType="textEmailAddress"
-                android:lines="1" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/emailContainer"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="270dp"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="5dp"
-            android:textColorHint="@color/black"
-            app:boxBackgroundColor="@color/white"
-            app:boxStrokeWidth="1dp"
-            app:endIconMode="clear_text"
-            app:helperTextTextColor="@color/black"
-            app:hintTextColor="@color/black"
-            app:startIconDrawable="@drawable/ic_email"
-            app:startIconTint="@color/blue">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailEditText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="@string/email"
-                android:inputType="textEmailAddress"
-                android:lines="1" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tamggalLahirContainer"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="270dp"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="5dp"
-            android:textColorHint="@color/black"
-            app:boxBackgroundColor="@color/white"
-            app:boxStrokeWidth="1dp"
-            app:endIconMode="clear_text"
-            app:helperTextTextColor="@color/black"
-            app:hintTextColor="@color/black"
-            app:startIconDrawable="@drawable/ic_date"
-            app:startIconTint="@color/blue">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tanggalLahirEditText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="@string/tanggal_lahir"
-                android:inputType="textEmailAddress"
-                android:lines="1" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/genderContainer"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="270dp"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="5dp"
-            android:textColorHint="@color/black"
-            app:boxBackgroundColor="@color/white"
-            app:boxStrokeWidth="1dp"
-            app:endIconMode="clear_text"
-            app:helperTextTextColor="@color/black"
-            app:hintTextColor="@color/black"
-            app:startIconDrawable="@drawable/ic_transgender"
-            app:startIconTint="@color/blue">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/genderEditText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="@string/jenis_kelamin"
-                android:inputType="textEmailAddress"
-                android:lines="1" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <Button
-            android:id="@+id/buttonLogin"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="270dp"
-            android:layout_height="50dp"
-            android:text="@string/tambah"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="10dp"
-            android:textSize="15sp"
-            app:backgroundTint="@color/blue" />
-
-    </LinearLayout>
-
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+    <androidx.cardview.widget.CardView
+        android:layout_width="310dp"
+        android:layout_height="450dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.283" />
+        app:layout_constraintVertical_bias="0.313">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="25dp"
+                android:textSize="15sp"
+                android:text="@string/tambah_contact"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/usernameContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="270dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:textColorHint="@color/black"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeWidth="1dp"
+                app:endIconMode="clear_text"
+                app:helperTextTextColor="@color/black"
+                app:hintTextColor="@color/black"
+                app:startIconDrawable="@drawable/ic_baseline_person"
+                app:startIconTint="@color/blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/usernameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/username"
+                    android:inputType="textEmailAddress"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/alamatContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="270dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:textColorHint="@color/black"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeWidth="1dp"
+                app:endIconMode="clear_text"
+                app:helperTextTextColor="@color/black"
+                app:hintTextColor="@color/black"
+                app:startIconDrawable="@drawable/ic_baseline_location"
+                app:startIconTint="@color/blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/alamatEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/alamat"
+                    android:inputType="textEmailAddress"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/teleponeContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="270dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:textColorHint="@color/black"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeWidth="1dp"
+                app:endIconMode="clear_text"
+                app:helperTextTextColor="@color/black"
+                app:hintTextColor="@color/black"
+                app:startIconDrawable="@drawable/ic_local_phone"
+                app:startIconTint="@color/blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/teleponeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/nomer_telepone"
+                    android:inputType="textEmailAddress"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="270dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:textColorHint="@color/black"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeWidth="1dp"
+                app:endIconMode="clear_text"
+                app:helperTextTextColor="@color/black"
+                app:hintTextColor="@color/black"
+                app:startIconDrawable="@drawable/ic_email"
+                app:startIconTint="@color/blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tamggalLahirContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="270dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:textColorHint="@color/black"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeWidth="1dp"
+                app:endIconMode="clear_text"
+                app:helperTextTextColor="@color/black"
+                app:hintTextColor="@color/black"
+                app:startIconDrawable="@drawable/ic_date"
+                app:startIconTint="@color/blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tanggalLahirEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/tanggal_lahir"
+                    android:inputType="textEmailAddress"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/genderContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="270dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:textColorHint="@color/black"
+                app:boxBackgroundColor="@color/white"
+                app:boxStrokeWidth="1dp"
+                app:endIconMode="clear_text"
+                app:helperTextTextColor="@color/black"
+                app:hintTextColor="@color/black"
+                app:startIconDrawable="@drawable/ic_transgender"
+                app:startIconTint="@color/blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/genderEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/jenis_kelamin"
+                    android:inputType="textEmailAddress"
+                    android:lines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/buttonAdd"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="270dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:text="@string/tambah"
+                android:textSize="15sp"
+                app:backgroundTint="@color/blue" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!--    <ProgressBar-->
+<!--        android:id="@+id/progressBar2"-->
+<!--        style="?android:attr/progressBarStyle"-->
+<!--        android:layout_width="60dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.498"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.283" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>
